@@ -10,7 +10,7 @@
 - *mongoose*: Mongo connector
 - *morgan*: Backend upload files
 - *multer*: Upload images
-- *fs-extra*: ?Promises filesystem
+- *fs-extra*: Promises filesystem
 - *errorhandler*: Print errors
 - *gravatar*: Assign image to email
 - *md5*: For encodding gravatar
