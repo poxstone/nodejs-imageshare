@@ -1,11 +1,23 @@
+const path = require('path');
+const fs = require('fs-extra');
+const { randomNumber } = require('../helpers/libs');
 const ctrl = {};
 
 ctrl.index = (req, res) => {
     res.send('Index page');
 };
 
-ctrl.create = (req, res) => {
-    console.log('file upload:', req.file);
+// add "async" for asyncronus functions with await
+ctrl.create = async (req, res) => {
+    const imgUrl = randomNumber();
+    const imageTempPath = req.file.path;
+    const ext = path.extname(req.file.originalname).toLowerCase();
+    const targetPath = path.resolve(`src/public/upload/${imgUrl}${ext}`);
+
+    if (ext.match(/(png)|(jpe?g)|(gif)/)) {
+        // move image
+        await fs.rename(imageTempPath, targetPath);
+    }
     res.send('Works!');
 };
 
