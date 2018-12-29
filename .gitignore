@@ -9,4 +9,4 @@ __pycache__/*
 node_modules
 package-lock.json
 *.sw[mnop]
-public/upload/
+src/public/upload/

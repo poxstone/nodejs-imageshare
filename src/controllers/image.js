@@ -5,7 +5,8 @@ ctrl.index = (req, res) => {
 };
 
 ctrl.create = (req, res) => {
-    res.send('Create page');
+    console.log('file upload:', req.file);
+    res.send('Works!');
 };
 
 ctrl.like = (req, res) => {
