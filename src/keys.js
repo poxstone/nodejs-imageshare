@@ -1,6 +1,6 @@
 module.exports = {
     database: {
-        URI: 'mongodb://localhost:27017/imgshare'
+        URI: 'mongodb://localhost:27017/imgshare',
     },
     // others
     //facebook = {...}

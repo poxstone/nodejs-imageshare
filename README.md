@@ -40,7 +40,18 @@ npm install;
 > *smallfiles*: allow create file fo small size to 2GB
 
 ```bash
-docker run --rm -itd -v $HOME/mongodb:/etc/mongo -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME="myuser" -e MONGO_INITDB_ROOT_PASSWORD="mypassword" --name mongo mongo:3.4.18 --smallfiles;
+docker run --rm -itd -v $HOME/mongodb:/etc/mongo -p 27017:27017 -e _MONGO_INITDB_ROOT_USERNAME="myuser" -e _MONGO_INITDB_ROOT_PASSWORD="mypassword" --name mongo mongo:3.4.18 --smallfiles;
+
+# command connection
+mongo --username "myuser" --password "mypassword" --authenticationDatabase admin --host "localhost" --port 27017;
+
+# Select In mongo
+use imgshare;
+db.images.find();
+
+
+
+
 ```
 ### Run app
 ```bash
